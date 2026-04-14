@@ -1,0 +1,57 @@
+/* Octave Script migrated from main.css */
+.oct-script {
+  border: 1px solid rgba(44,125,160,.3);
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgb(1,18,30);
+  font-family: var(--mono);
+  font-size: 13px;
+  line-height: 1.7;
+}
+.oct-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 9px 16px;
+  background: rgb(1,26,42);
+  border-bottom: 1px solid rgba(44,125,160,.2);
+}
+.oct-fname {
+  font-size: 11px;
+  color: #89c2d9;
+  letter-spacing: .04em;
+}
+.oct-lang {
+  font-size: 10px;
+  color: rgba(169,214,229,.35);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+.oct-body {
+  padding: 16px 20px;
+}
+.oct-line {
+  display: block;
+  min-height: 22px;
+}
+.oct-spacer { min-height: 10px; }
+.oct-indent  { padding-left: 24px; }
+.oct-indent2 { padding-left: 48px; }
+
+/* Syntax colors */
+.oct-comment { color: rgba(137,194,217,.4); font-style: italic; }
+.oct-kw      { color: #c792ea; }
+.oct-fn      { color: #e9a23b; }
+.oct-arg     { color: #89c2d9; }
+.oct-builtin { color: #61a5c2; }
+.oct-str     { color: #a8d8a8; }
+.oct-num     { color: #f78c6c; }
+.oct-var     { color: #e8f0ff; }
+.oct-punc    { color: rgba(169,214,229,.45); }
+
+@media (max-width: 480px) {
+  .oct-script { font-size: 11px; }
+  .oct-body { padding: 12px 14px; }
+  .oct-indent  { padding-left: 14px; }
+  .oct-indent2 { padding-left: 28px; }
+}

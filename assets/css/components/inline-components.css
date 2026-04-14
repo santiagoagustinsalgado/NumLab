@@ -1,0 +1,74 @@
+﻿.nl-pack-card--epic {
+  position: relative;
+  background: linear-gradient(160deg, rgb(18, 10, 42) 0%, rgb(1, 40, 67) 60%);
+}
+
+.nl-pack-individual__row {
+  margin-top: 14px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px 16px;
+  padding: 28px 32px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: rgb(1, 40, 67);
+}
+
+.nl-pack-individual__label {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.nl-pack-individual__sep {
+  color: var(--border);
+  font-size: 12px;
+}
+
+.nl-pack-individual__price {
+  font-family: var(--mono);
+  font-size: 16px;
+  color: var(--text);
+  font-weight: 700;
+}
+
+.nl-pack-individual__price-unit {
+  font-size: 11px;
+  color: var(--muted);
+  font-weight: 400;
+}
+
+.nl-pack-individual__text {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.nl-btn--compact {
+  font-size: 12px;
+  padding: 8px 16px;
+}
+
+.nl-footer__email-link {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.nl-footer__collab {
+  margin-top: 18px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.nl-footer__collab-link {
+  color: var(--accent2);
+  text-decoration: none;
+  font-weight: 700;
+}
+

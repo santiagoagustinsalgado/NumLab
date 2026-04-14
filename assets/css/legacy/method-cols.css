@@ -1,0 +1,202 @@
+/* Method Cols and bridge migrated from main.css */
+.method-cols {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-bottom: 0;
+}
+
+.mcol {
+  display: flex;
+  flex-direction: column;
+  background: rgba(1,28,44,.55);
+  transition: background .25s;
+  position: relative;
+}
+.mcol:hover {
+  background: rgba(1,38,58,.8);
+}
+.mcol-center {
+  background: rgba(1,20,36,.8);
+  border-left: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+}
+.mcol-center:hover {
+  background: rgba(1,28,50,.9);
+}
+
+.mcol-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 22px 0 0;
+  position: relative;
+}
+.mcol-letter {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: rgb(1,28,44);
+  border: 2px solid rgba(44,125,160,.35);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--mono);
+  font-size: 14px; font-weight: 700;
+  color: rgba(44,125,160,.7);
+  flex-shrink: 0;
+  transition: border-color .3s, color .3s, box-shadow .3s;
+  position: relative;
+  z-index: 2;
+}
+.mcol:hover .mcol-letter {
+  border-color: var(--accent);
+  color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(233,162,59,.10), 0 0 14px rgba(233,162,59,.22);
+}
+.mcol-node-accent .mcol-letter {
+  border-color: rgba(233,162,59,.55);
+  color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(233,162,59,.08), 0 0 18px rgba(233,162,59,.18);
+}
+
+.mcol-connector {
+  width: 1px;
+  flex: 1;
+  min-height: 18px;
+  background: linear-gradient(to bottom, rgba(44,125,160,.4), rgba(44,125,160,.08));
+  margin: 6px 0 0;
+}
+
+.mcol-body {
+  padding: 16px 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+.mcol-label {
+  font-family: var(--display);
+  font-size: clamp(16px, 2.2vw, 20px);
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -.3px;
+  line-height: 1.1;
+}
+.mcol-bullets {
+  list-style: none; padding: 0; margin: 0;
+  display: flex; flex-direction: column; gap: 6px;
+}
+.mcol-bullets li {
+  font-size: 13px; color: var(--muted);
+  padding-left: 14px; position: relative; line-height: 1.5;
+}
+.mcol-bullets li::before {
+  content: '-'; position: absolute; left: 0;
+  color: rgba(44,125,160,.45); font-size: 10px; top: 3px;
+}
+
+.mcol-code {
+  border: 1px solid rgba(44,125,160,.2);
+  border-radius: 8px;
+  overflow: hidden;
+  background: rgb(1,12,22);
+  font-family: var(--mono);
+  font-size: 11px;
+  line-height: 1.7;
+}
+.mcc-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 10px;
+  background: rgb(1,20,32);
+  border-bottom: 1px solid rgba(44,125,160,.15);
+}
+.mcc-dots {
+  display: flex; gap: 4px;
+}
+.mcc-dots span {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: rgba(44,125,160,.25);
+}
+.mcc-name {
+  font-size: 9px;
+  color: rgba(137,194,217,.4);
+  letter-spacing: .04em;
+}
+.mcc-body {
+  padding: 10px 12px;
+  color: var(--muted);
+}
+.mcol-quote {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--accent2);
+  letter-spacing: .3px;
+  margin: 0;
+  padding: 8px 12px;
+  border-left: 2px solid rgba(233,162,59,.3);
+  background: rgba(233,162,59,.04);
+  border-radius: 0 5px 5px 0;
+  line-height: 1.5;
+  font-style: italic;
+}
+
+.mcol-coverage {
+  padding-top: 4px;
+}
+.mcol-cov-label {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--dim, rgba(44,125,160,.45));
+  margin-bottom: 8px;
+}
+.mcol-cov-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.method-bridge {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 0 12px;
+  color: rgba(44,125,160,.3);
+}
+.mb-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(44,125,160,.25), transparent);
+}
+.mb-label {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(44,125,160,.3);
+}
+
+@media (max-width: 760px) {
+  .method-cols {
+    grid-template-columns: 1fr;
+    gap: 1px;
+  }
+  .mcol-center {
+    border-left: none;
+    border-right: none;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .mcol-node {
+    flex-direction: row;
+    padding: 18px 20px 0;
+    gap: 12px;
+  }
+  .mcol-connector {
+    display: none;
+  }
+}

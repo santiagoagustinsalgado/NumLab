@@ -1,0 +1,27 @@
+﻿body.u-overflow-x-hidden,
+.wrap.u-overflow-x-hidden {
+  overflow-x: hidden;
+}
+
+.icon-svg-shrink {
+  flex-shrink: 0;
+}
+
+.nl-section__title--reveal {
+  overflow: hidden;
+}
+
+.nl-section__intro {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.nl-hero__helper-note {
+  margin-top: 28px;
+  font-size: 11px;
+  color: rgba(137, 194, 217, 0.3);
+  font-family: var(--mono);
+}
+

@@ -1,0 +1,423 @@
+﻿/* â”€â”€ Packs â”€â”€ */
+    .packs-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      align-items: stretch;
+    }
+    .pack-card {
+      padding: 0;
+      border: 1px solid var(--border); border-radius: var(--radius);
+      background: rgb(1, 40, 67);
+      transition: border-color .25s, background .25s, transform .35s cubic-bezier(0.16,1,0.3,1), box-shadow .25s;
+      display: grid;
+      grid-template-rows: 52px 56px 80px auto 1fr;
+      /* badge | horas | desc(fijo) | precio | distribuible */
+    }
+    .pack-card > .badge-row,
+    .pack-card > .pack-inner > .badge-row {
+      padding: 18px 22px 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .pack-card > .pack-name,
+    .pack-card > .pack-inner > .pack-name {
+      padding: 4px 22px 0;
+      display: block;
+      font-size: clamp(32px, 5vw, 42px);
+      font-weight: 800;
+      color: var(--text);
+      line-height: 1.1;
+    }
+    .pack-card > .pack-desc,
+    .pack-card > .pack-inner > .pack-desc {
+      padding: 6px 22px 0; margin: 0;
+    }
+    .pack-card > .pack-price,
+    .pack-card > .pack-inner > .pack-price {
+      padding: 10px 22px 0; margin: 0;
+    }
+    .pack-card > ul,
+    .pack-card > .pack-inner > ul {
+      padding: 10px 22px 20px; margin: 0;
+    }
+    .pack-card:hover {
+      border-color: var(--border-o);
+      background: rgb(1, 44, 77);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(1,32,48,.4);
+    }
+    .pack-card.featured {
+      border-color: var(--border-o); background: rgb(8,36,48);
+    }
+    .pack-card.featured:hover {
+      background: rgb(22,44,49);
+      transform: translateY(-6px);
+      box-shadow: 0 16px 40px rgba(233,162,59,.2);
+    }
+    .pack-badge {
+      display: inline-block; padding: 4px 10px; border-radius: 999px;
+      font-family: var(--mono); font-size: 10px; font-weight: 700;
+      letter-spacing: .8px; text-transform: uppercase; margin-bottom: 12px;
+    }
+    .pack-badge.orange {
+      background: rgb(36,52,50); color: var(--accent2); border: 1px solid var(--border-o);
+    }
+    .pack-badge.grey {
+      background: rgb(14,43,58); color: var(--muted); border: 1px solid var(--border);
+    }
+    .pack-name {
+      font-family: var(--display); font-size: 30px; line-height: 1; margin: 0;
+    }
+    .pack-desc {
+      font-size: 14px; color: var(--muted); line-height: 1.55; margin: 0; overflow: hidden;
+    }
+    .pack-price {
+      font-family: var(--mono); font-size: 12px; color: var(--muted); margin: 0;
+    }
+    .pack-price b {
+      color: var(--text); font-size: 14px;
+    }
+    .pack-price .bonus {
+      color: var(--ok);
+    }
+    .pack-list {
+      list-style: none; display: grid; gap: 6px;
+    }
+    .pack-list li {
+      font-size: 14px; color: var(--muted); padding-left: 16px; position: relative; line-height: 1.5;
+    }
+    .pack-list li::before {
+      content: 'â€”'; position: absolute; left: 0; color: var(--accent); font-size: 11px;
+    }
+
+/* â”€â”€ JerarquÃ­a visual de packs â”€â”€ */
+/* 5h â€” entrada, sobrio */
+    .pack-card.entry {
+      border-color: rgba(44,125,160,.55);
+      box-shadow: 0 0 20px rgba(44,125,160,.12), inset 0 1px 0 rgba(169,214,229,.08);
+    }
+/* 10h â€” recomendado, ya tiene borde Ã¡mbar inline, agregar badge flotante */
+/* Borde superior violeta en pack 10h */
+    .pack-card.epic {
+      border-top: 3px solid rgba(167,139,250,.9) !important;;
+      border: 1.5px solid rgba(139,92,246,.5);
+      animation: shimmer-violet 2.4s ease-in-out infinite;
+      background: rgb(10, 22, 44)
+    }
+/* Badge dorado para 20h */
+    .pack-badge.premium-badge {
+      background: rgb(29,48,49);
+      border: 1px solid rgba(233,162,59,.5);
+      color: var(--accent2);
+      font-family: var(--mono); font-size: 10px; font-weight: 700;
+      letter-spacing: 1.5px; padding: 3px 10px; border-radius: 6px;
+      display: inline-block; margin-bottom: 10px;
+    }
+/* Badge Ã©pico para 10h */
+    .pack-badge.epic-badge {
+      background: rgb(18,39,72);
+      border: 1px solid rgba(167,139,250,.45);
+      color: rgba(196,181,253,1);
+    }
+    .pack-recommended {
+      position: absolute;
+      top: -12px; left: 50%;
+      transform: translateX(-50%);
+      background: var(--accent);
+      color: #0D0800;
+      font-family: var(--mono);
+      font-size: 10px; font-weight: 700;
+      letter-spacing: 1.5px;
+      padding: 4px 14px;
+      border-radius: 999px;
+      white-space: nowrap;
+      box-shadow: 0 4px 12px rgba(233,162,59,.35);
+      overflow: hidden;
+    }
+    .pack-recommended::after {
+      content: '';
+      position: absolute; top: 0; left: -75%;
+      width: 50%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,.55), transparent);
+      animation: badge-flash 2.2s ease-in-out infinite;
+    }
+@keyframes badge-flash {
+      0%   { left: -75%; }
+      100% { left: 125%; }
+    }
+/* 20h â€” premium, shimmer en el borde */
+    .pack-card.premium
+    @supports not (grid-template-rows: subgrid) {
+      .pack-card.premium
+    }
+/* â”€â”€ Pack 10h â€” violeta Ã©pico â”€â”€ */
+@keyframes shimmer-violet {
+      0%,100% { border-color: rgba(139,92,246,.5);  box-shadow: 0 0 8px rgba(139,92,246,.2);
+    }
+    50% {
+      border-color: rgba(167,139,250,.95); box-shadow: 0 0 22px rgba(167,139,250,.45);
+    }
+    }
+    .pack-card.epic:hover {
+      animation-play-state: paused;
+      border-color: rgba(167,139,250,1) !important;
+      box-shadow: 0 12px 36px rgba(139,92,246,.4) !important;
+    }
+/* â”€â”€ Pack 20h â€” dorado Ã©pico â”€â”€ */
+@keyframes shimmer-gold {
+      0%,100% { border-color: rgba(233,162,59,.5);  box-shadow: 0 0 8px rgba(233,162,59,.2);
+    }
+    }
+    .pack-card.premium {
+      position: relative;
+      background: rgb(14, 27, 29);
+      border: 1.5px solid rgba(233,162,59,.5);
+      border-radius: var(--radius);
+      animation: shimmer-gold 3.8s ease-in-out infinite;
+    }
+/* â”€â”€ CTA Final: glow pulsante en borde â”€â”€ */
+@keyframes cta-glow {
+      0%,100% { box-shadow: 0 0 0 0 rgba(233,162,59,.0),  inset 0 0 0 0 rgba(233,162,59,.0); border-color: rgba(233,162,59,.35);
+    }
+    }
+/* â”€â”€ Shimmer en botones del CTA â”€â”€ */
+@keyframes btn-shimmer {
+      0%   { background-position: -200% center;
+    }
+    100% {
+      background-position: 200% center;
+    }
+    }
+    .cta-final .btn-wa,
+    .cta-final .btn-ghost {
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-final .btn-wa::after,
+    .cta-final .btn-ghost::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: linear-gradient(
+        105deg,
+        transparent 40%,
+        rgba(255,255,255,.18) 50%,
+        transparent 60%
+      );
+      background-size: 200% 100%;
+      animation: btn-shimmer 3.5s ease-in-out infinite;
+      pointer-events: none;
+      border-radius: inherit;
+    }
+    .cta-final .btn-ghost::after {
+      background: linear-gradient(
+        105deg,
+        transparent 40%,
+        rgba(255,255,255,.10) 50%,
+        transparent 60%
+      );
+      background-size: 200% 100%;
+      animation: btn-shimmer 3.5s ease-in-out infinite;
+      animation-delay: .8s;
+    }
+/* Pausar animaciones si reduced motion */
+/* â”€â”€ Pack 10h: badge "MÃ¡s elegido" resalta en violeta al hover â”€â”€ */
+    .pack-card.epic:hover .epic-badge,
+    .pack-card.epic:active .epic-badge {
+      background: rgb(40, 49, 103) !important;
+      border-color: rgba(167,139,250,.9) !important;
+      color: #e0d4ff !important;
+      box-shadow: 0 0 12px rgba(167,139,250,.45);
+      transition: all .25s;
+    }
+/* â”€â”€ Pack 20h: badge "âœ¦ PREMIUM" resalta en dorado al hover + escala 20% â”€â”€ */
+    .pack-card.premium:hover .premium-badge,
+    .pack-card.premium:active .premium-badge {
+      background: rgb(66,68,51) !important;
+      border-color: rgba(245,201,122,.9) !important;
+      color: #ffe4a0 !important;
+      box-shadow: 0 0 12px rgba(245,201,122,.5);
+      transition: all .25s;
+    }
+    .pack-card.premium:hover,
+    .pack-card.premium:active {
+      transform: scale(1.06) !important;
+      z-index: 10;
+      background: #0A1A2A !important;
+      border-color: rgba(245,201,122,1) !important;
+      box-shadow: 0 16px 40px rgba(233,162,59,.4) !important;
+      animation-play-state: paused;
+    }
+/* Mantener fondo sÃ³lido tambiÃ©n al volver (transiciÃ³n) */
+/* â”€â”€ Alinear badges en los tres packs â”€â”€ */
+    .pack-card .badge-row {
+      display: flex;
+      align-items: center;
+    }
+/* â”€â”€ Incluido en todos los packs â”€â”€ */
+    .pack-includes {
+      margin-top: 16px; margin-bottom: 0;
+      padding: 16px 22px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: rgb(1,35,56);
+    }
+    .pack-includes-title {
+      font-family: var(--mono); font-size: 10px; letter-spacing: 1px;
+      text-transform: uppercase; color: var(--muted); margin-bottom: 10px;
+    }
+    .pack-includes-items {
+      display: flex; flex-wrap: wrap; gap: 8px 20px;
+    }
+    .pack-includes-items span {
+      font-size: 13px; color: var(--muted);
+    }
+/* â”€â”€ Distribuible en card â”€â”€ */
+    .pack-distribuible {
+      font-family: var(--mono); font-size: 11px;
+      color: var(--accent2); letter-spacing: .3px;
+      padding: 14px 22px 52px;
+      margin-top: 12px;
+    }
+
+@media (max-width: 900px) {
+    .packs-grid {
+      grid-template-columns: 1fr;
+    }
+    .pack-card {
+      grid-template-rows: auto auto auto auto auto;
+      max-width: 480px;
+      margin: 0 auto;
+      width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .pack-card.epic { animation: none; border-color: rgba(139,92,246,.6); }
+    .pack-card.premium { animation: none; border-color: rgba(233,162,59,.6); }
+    .pack-card {
+      grid-template-rows: auto auto auto auto auto !important;
+    }
+    .pack-card.premium:active {
+      transform: none !important;
+    }
+}
+
+@media (max-width: 640px) {
+    .pack-name { font-size: 24px; }
+
+    .pack-selector {
+      text-align: center;
+      padding: 20px 16px;
+    }
+    .pack-selector-label {
+      text-align: center;
+      font-size: 11px;
+      letter-spacing: .12em;
+      margin-bottom: 14px;
+    }
+    .pack-selector-pills {
+      justify-content: center;
+      gap: 10px;
+    }
+    #selector-hint {
+      text-align: center;
+      margin-top: 14px;
+    }
+
+    .pack-card {
+      text-align: center;
+    }
+    .badge-row {
+      padding: 18px 16px 0;
+      display: flex;
+      justify-content: center;
+    }
+    .pack-name {
+      padding: 0 16px;
+      justify-content: center;
+      font-size: 36px;
+    }
+    .pack-desc {
+      padding: 8px 16px 0;
+      text-align: center;
+    }
+    .pack-price {
+      padding: 10px 16px 0;
+      text-align: center;
+    }
+    .pack-distribuible {
+      text-align: center;
+      padding: 0 16px;
+    }
+    .pack-includes {
+      margin: 12px 16px 0;
+      text-align: left;
+    }
+    .pack-cta {
+      padding: 16px;
+    }
+    .pack-cta .btn {
+      width: 100%;
+      justify-content: center;
+    }
+
+    #packs .section-tag,
+    #packs .section-title,
+    #packs .section-lead {
+      text-align: center;
+    }
+
+    .pack-individual-row {
+      justify-content: center;
+      flex-wrap: wrap;
+      text-align: center;
+      gap: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .packs-grid { grid-template-columns: 1fr; }
+    .pack-name { font-size: 20px; }
+    .pack-card { padding: 20px 18px; }
+}
+
+#packs {
+  margin-top: 0;
+}
+
+.pack-card.pack-highlighted {
+  transform: translateY(-6px) scale(1.01) !important;
+  z-index: 5;
+}
+
+#pack-individual.pack-highlighted {
+  border-color: rgba(44,125,160,.8) !important;
+  box-shadow: none !important;
+  transform: translateY(-4px) !important;
+}
+
+#pack-5h.pack-highlighted {
+  border-color: rgba(44,125,160,.9) !important;
+  box-shadow: 0 0 0 3px rgba(44,125,160,.25), 0 16px 40px rgba(44,125,160,.3) !important;
+  transform: translateY(-6px) scale(1.01) !important;
+  background: rgb(1,44,70) !important;
+}
+
+#pack-10h.pack-highlighted {
+  border-color: rgba(167,139,250,1) !important;
+  box-shadow: 0 0 0 3px rgba(139,92,246,.3), 0 16px 40px rgba(139,92,246,.35) !important;
+  transform: translateY(-6px) scale(1.01) !important;
+  background: rgb(12,8,36) !important;
+}
+
+#pack-20h.pack-highlighted {
+  border-color: rgba(245,201,122,1) !important;
+  box-shadow: 0 0 0 3px rgba(233,162,59,.3), 0 16px 40px rgba(233,162,59,.4) !important;
+  transform: scale(1.06) !important;
+  background: #0A1A2A !important;
+  animation-play-state: paused !important;
+  z-index: 10;
+}
