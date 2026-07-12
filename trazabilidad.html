@@ -1,0 +1,879 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2064%2064%27%3E%0A%20%20%3Crect%20x%3D%272%27%20y%3D%272%27%20width%3D%2760%27%20height%3D%2760%27%20rx%3D%2714%27%20fill%3D%27%23012030%27%20stroke%3D%27%232C7DA0%27%20stroke-width%3D%272%27/%3E%0A%20%20%3Ctext%20x%3D%2750%25%27%20y%3D%2754%25%27%20text-anchor%3D%27middle%27%0A%20%20%20%20%20%20%20%20font-family%3D%27Arial%2C%20Helvetica%2C%20sans-serif%27%0A%20%20%20%20%20%20%20%20font-size%3D%2736%27%20font-weight%3D%27800%27%20letter-spacing%3D%27-3%27%3E%0A%20%20%20%20%3Ctspan%20fill%3D%27%23FFFFFF%27%3EN%3C/tspan%3E%3Ctspan%20fill%3D%27%23E9A23B%27%3EL%3C/tspan%3E%0A%20%20%3C/text%3E%0A%3C/svg%3E">
+  <link rel="shortcut icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2064%2064%27%3E%0A%20%20%3Crect%20x%3D%272%27%20y%3D%272%27%20width%3D%2760%27%20height%3D%2760%27%20rx%3D%2714%27%20fill%3D%27%23012030%27%20stroke%3D%27%232C7DA0%27%20stroke-width%3D%272%27/%3E%0A%20%20%3Ctext%20x%3D%2750%25%27%20y%3D%2754%25%27%20text-anchor%3D%27middle%27%0A%20%20%20%20%20%20%20%20font-family%3D%27Arial%2C%20Helvetica%2C%20sans-serif%27%0A%20%20%20%20%20%20%20%20font-size%3D%2736%27%20font-weight%3D%27800%27%20letter-spacing%3D%27-3%27%3E%0A%20%20%20%20%3Ctspan%20fill%3D%27%23FFFFFF%27%3EN%3C/tspan%3E%3Ctspan%20fill%3D%27%23E9A23B%27%3EL%3C/tspan%3E%0A%20%20%3C/text%3E%0A%3C/svg%3E">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex,nofollow,noarchive,nosnippet,noimageindex,max-snippet:0,max-image-preview:none">
+  <meta name="theme-color" content="#012030">
+  <meta property="og:site_name" content="NumLab Academy">
+  <meta property="og:title" content="NumLab Academy · trazabilidad de experiencias">
+  <meta property="og:description" content="Registro privado de experiencias de estudiantes. Uso interno de curaduría editorial.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://numlab.com.ar/trazabilidad">
+  <meta property="og:image" content="https://numlab.com.ar/og.png">
+  <meta property="og:image:secure_url" content="https://numlab.com.ar/og.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="NumLab Academy — Acompañamiento técnico en programación y análisis numérico para ingeniería">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="NumLab Academy · trazabilidad de experiencias">
+  <meta name="twitter:description" content="Registro privado de experiencias de estudiantes. Uso interno de curaduría editorial.">
+  <meta name="twitter:image" content="https://numlab.com.ar/og.png">
+  <meta name="twitter:image:alt" content="NumLab Academy — Acompañamiento técnico-académico para ingeniería">
+  <title>NumLab · trazabilidad de experiencias</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --noche: #012030;
+      --noche-deep: #011825;
+      --amber: #E9A23B;
+      --amber-light: #F5C97A;
+      --azul: #2C7DA0;
+      --azul-muted: #89C2D9;
+      --texto: #E8F0FF;
+      --texto-muted: rgba(232,240,255,0.55);
+      --border: rgba(44,125,160,0.25);
+      --border-strong: rgba(44,125,160,0.5);
+      --surface: rgba(255,255,255,0.04);
+      --surface-hover: rgba(255,255,255,0.07);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { font-size: 16px; }
+
+    body {
+      background-color: var(--noche);
+      color: var(--texto);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 400;
+      line-height: 1.7;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+    }
+
+    /* NAV */
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 28px 0 40px;
+      border-bottom: 0.5px solid var(--border);
+      margin-bottom: 48px;
+    }
+
+    .nav-logo {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      letter-spacing: -0.01em;
+      color: var(--texto);
+      text-decoration: none;
+    }
+
+    .nav-logo span { color: var(--amber); }
+
+    .nav-tag {
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--texto-muted);
+    }
+
+    /* HERO */
+    .hero {
+      margin-bottom: 52px;
+    }
+
+    .eyebrow {
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--amber);
+      margin-bottom: 16px;
+    }
+
+    .hero h1 {
+      font-family: 'Space Mono', monospace;
+      font-size: clamp(28px, 5vw, 42px);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      color: var(--texto);
+      margin-bottom: 20px;
+    }
+
+    .hero h1 em {
+      color: var(--amber);
+      font-style: normal;
+    }
+
+    .hero p {
+      font-size: 16px;
+      color: var(--texto-muted);
+      max-width: 520px;
+      line-height: 1.7;
+    }
+
+    /* DIVIDER */
+    .divider {
+      height: 0.5px;
+      background: var(--border);
+      margin: 40px 0;
+    }
+
+    /* SECTION LABEL */
+    .section-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--azul-muted);
+      margin-bottom: 20px;
+    }
+
+    /* STORY INTRO */
+    .story-intro {
+      margin-bottom: 40px;
+    }
+
+    .story-kicker {
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      color: var(--amber);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 10px;
+    }
+
+    .story-title {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--texto);
+      margin-bottom: 10px;
+      line-height: 1.35;
+    }
+
+    .story-copy {
+      font-size: 15px;
+      color: var(--texto-muted);
+      line-height: 1.65;
+    }
+
+    /* QUESTIONS */
+    .question-block {
+      margin-bottom: 32px;
+      display: none;
+    }
+
+    .question-block.active { display: block; }
+
+    .question-title {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--texto);
+      margin-bottom: 12px;
+      display: block;
+      line-height: 1.5;
+    }
+
+    textarea {
+      width: 100%;
+      background: var(--surface);
+      border: 0.5px solid var(--border);
+      border-radius: 8px;
+      padding: 14px 16px;
+      color: var(--texto);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+      resize: vertical;
+      min-height: 120px;
+      transition: border-color 0.15s;
+      -webkit-appearance: none;
+    }
+
+    textarea::placeholder { color: var(--texto-muted); }
+    textarea:focus {
+      outline: none;
+      border-color: var(--azul);
+      background: var(--surface-hover);
+    }
+
+    /* PROGRESS */
+    .progress-wrap {
+      margin-bottom: 32px;
+    }
+
+    .progress-meta {
+      display: flex;
+      justify-content: space-between;
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      color: var(--texto-muted);
+      margin-bottom: 10px;
+    }
+
+    .progress-track {
+      height: 2px;
+      background: var(--border);
+      border-radius: 1px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: var(--amber);
+      border-radius: 1px;
+      transition: width 0.3s ease;
+    }
+
+    /* NAVIGATION */
+    .question-navigation {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 48px;
+    }
+
+    /* BUTTONS */
+    .btn {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 11px 22px;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      transition: opacity 0.15s, transform 0.1s;
+      letter-spacing: 0.01em;
+      -webkit-appearance: none;
+    }
+
+    .btn:active { transform: scale(0.98); }
+    .btn:disabled { opacity: 0.35; cursor: not-allowed; transform: none; }
+
+    .btn-primary {
+      background: var(--amber);
+      color: var(--noche);
+    }
+
+    .btn-primary:hover:not(:disabled) { background: var(--amber-light); }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--texto-muted);
+      border: 0.5px solid var(--border-strong);
+    }
+
+    .btn-secondary:hover:not(:disabled) {
+      background: var(--surface);
+      color: var(--texto);
+    }
+
+    .btn-whatsapp {
+      background: #25D366;
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 15px;
+      padding: 14px 28px;
+    }
+
+    .btn-whatsapp:hover { background: #20c55a; }
+
+    /* FORM FIELDS */
+    .field {
+      width: 100%;
+      background: var(--surface);
+      border: 0.5px solid var(--border);
+      border-radius: 8px;
+      padding: 12px 16px;
+      color: var(--texto);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      transition: border-color 0.15s;
+      -webkit-appearance: none;
+    }
+
+    .field::placeholder { color: var(--texto-muted); }
+    .field:focus {
+      outline: none;
+      border-color: var(--azul);
+      background: var(--surface-hover);
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+
+    @media (max-width: 520px) {
+      .grid-2 { grid-template-columns: 1fr; }
+    }
+
+    label { display: block; }
+
+    label .question-title {
+      margin-bottom: 8px;
+      font-size: 14px;
+      color: var(--texto-muted);
+    }
+
+    /* NPS */
+    .nps-scale {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin: 12px 0;
+    }
+
+    .nps-option { display: flex; }
+
+    .nps-option input[type="radio"] { display: none; }
+
+    .nps-option span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      border: 0.5px solid var(--border-strong);
+      border-radius: 6px;
+      font-family: 'Space Mono', monospace;
+      font-size: 13px;
+      color: var(--texto-muted);
+      cursor: pointer;
+      transition: background 0.15s, border-color 0.15s, color 0.15s;
+      background: var(--surface);
+    }
+
+    .nps-option input:checked + span {
+      background: var(--amber);
+      border-color: var(--amber);
+      color: var(--noche);
+      font-weight: 700;
+    }
+
+    .nps-option span:hover {
+      border-color: var(--amber);
+      color: var(--amber);
+    }
+
+    .meta-note {
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      color: var(--texto-muted);
+    }
+
+    .nps-reason { margin-top: 20px; }
+
+    /* RADIOS */
+    .options { display: flex; flex-direction: column; gap: 10px; margin-top: 12px; }
+
+    .radio-line {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+    }
+
+    .radio-line input[type="radio"] {
+      appearance: none;
+      -webkit-appearance: none;
+      width: 18px;
+      height: 18px;
+      border: 0.5px solid var(--border-strong);
+      border-radius: 50%;
+      background: var(--surface);
+      flex-shrink: 0;
+      transition: border-color 0.15s;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .radio-line input[type="radio"]:checked {
+      border-color: var(--amber);
+      background: var(--amber);
+    }
+
+    .radio-line input[type="radio"]:checked::after {
+      content: '';
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      background: var(--noche);
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .radio-line span {
+      font-size: 15px;
+      color: var(--texto);
+    }
+
+    /* CHECKBOX */
+    .checkbox-line {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin: 24px 0;
+      cursor: pointer;
+    }
+
+    .checkbox-line input[type="checkbox"] {
+      appearance: none;
+      -webkit-appearance: none;
+      width: 18px;
+      height: 18px;
+      border: 0.5px solid var(--border-strong);
+      border-radius: 4px;
+      background: var(--surface);
+      flex-shrink: 0;
+      margin-top: 3px;
+      cursor: pointer;
+      transition: background 0.15s, border-color 0.15s;
+      position: relative;
+    }
+
+    .checkbox-line input:checked {
+      background: var(--amber);
+      border-color: var(--amber);
+    }
+
+    .checkbox-line input:checked::after {
+      content: '';
+      position: absolute;
+      left: 5px;
+      top: 2px;
+      width: 5px;
+      height: 9px;
+      border: 2px solid var(--noche);
+      border-top: none;
+      border-left: none;
+      transform: rotate(45deg);
+    }
+
+    .consent-text {
+      font-size: 14px;
+      color: var(--texto-muted);
+      line-height: 1.6;
+    }
+
+    /* HP */
+    .hp { position: absolute; left: -9999px; opacity: 0; pointer-events: none; }
+    .error {
+      color: #F87171;
+      font-size: 14px;
+      margin-top: 12px;
+      min-height: 20px;
+      font-family: 'Space Mono', monospace;
+    }
+
+    /* FOOTER NOTE */
+    .footer-note {
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      color: var(--texto-muted);
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 0.5px solid var(--border);
+    }
+
+    /* SUCCESS */
+    .success {
+      display: none;
+      padding: 60px 0;
+    }
+
+    .success.visible { display: block; }
+
+    .success-logo {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--texto);
+      margin-bottom: 32px;
+    }
+
+    .success-logo span { color: var(--amber); }
+
+    .success h2 {
+      font-family: 'Space Mono', monospace;
+      font-size: clamp(22px, 4vw, 32px);
+      font-weight: 700;
+      color: var(--texto);
+      line-height: 1.25;
+      margin: 16px 0 20px;
+    }
+
+    .success p {
+      font-size: 16px;
+      color: var(--texto-muted);
+      line-height: 1.7;
+      margin-bottom: 12px;
+    }
+
+    .success-gratitude {
+      font-style: italic;
+      color: var(--texto-muted);
+      margin-top: 24px;
+      padding-top: 24px;
+      border-top: 0.5px solid var(--border);
+    }
+
+    .success a {
+      display: inline-block;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--azul-muted);
+      text-decoration: none;
+      border-bottom: 0.5px solid var(--border-strong);
+      padding-bottom: 2px;
+      margin-top: 36px;
+      transition: color 0.15s;
+    }
+
+    .success a:hover { color: var(--texto); }
+
+    /* FINAL FIELDS section */
+    .final-fields { display: none; }
+    .final-fields.visible { display: block; }
+
+    /* STEP INDICATOR */
+    .step-indicator {
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      color: var(--amber);
+      margin-left: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <nav class="nav">
+      <a href="https://numlab.com.ar" class="nav-logo">Num<span>Lab</span> Academy</a>
+      <span class="nav-tag">Trazabilidad · interno</span>
+    </nav>
+
+    <main id="main-content">
+        <header class="hero">
+          <p class="eyebrow">NumLab · registro de experiencias</p>
+          <h1>El criterio también<br>deja <em>trazabilidad.</em></h1>
+          <p>Estoy documentando experiencias de quienes pasaron por NumLab. No hace falta completar todo; con una respuesta ya suma. Si querés agregar más detalle, lo valoro mucho.</p>
+        </header>
+
+        <form id="exp-form" novalidate>
+          <div class="story-intro">
+            <p class="story-kicker">Modo diagnóstico</p>
+            <h2 class="story-title">Tu experiencia en NumLab Academy</h2>
+            <p class="story-copy">Respuestas directas, sin relleno. Como trabajamos siempre.</p>
+          </div>
+
+          <p class="section-label">Relato · preguntas</p>
+
+          <!-- PROGRESS -->
+          <div class="progress-wrap">
+            <div class="progress-meta">
+              <span id="progress-label">Pregunta 1 de 6</span>
+              <span class="step-indicator" id="step-pct">0%</span>
+            </div>
+            <div class="progress-track">
+              <div class="progress-fill" id="progress-fill" style="width:0%"></div>
+            </div>
+          </div>
+
+          <!-- QUESTIONS -->
+            <div class="question-block active" data-index="0">
+              <span class="question-title">¿Qué materia o tema trajo más dolores de cabeza antes de trabajarlo con NumLab?</span>
+              <textarea name="q0" placeholder="Contame con tus palabras, sin formalidades." rows="5"></textarea>
+            </div>
+            <div class="question-block" data-index="1">
+              <span class="question-title">¿Qué valor tuvo el método y el seguimiento en tu avance concreto?</span>
+              <textarea name="q1" placeholder="Podés ser específico/a con la materia, el parcial, el momento." rows="5"></textarea>
+            </div>
+            <div class="question-block" data-index="2">
+              <span class="question-title">¿Sentís que la trazabilidad del proceso (código funcional, diagnóstico, práctica) marcó diferencia respecto a estudiar solo/a?</span>
+              <textarea name="q2" placeholder="Sí / no / depende — y por qué." rows="5"></textarea>
+            </div>
+            <div class="question-block" data-index="3">
+              <span class="question-title">¿Qué parte del acompañamiento reforzó más tu confianza técnica frente a las materias?</span>
+              <textarea name="q3" placeholder="Clases, ejercicios, diagnóstico, ritmo de trabajo..." rows="5"></textarea>
+            </div>
+            <div class="question-block" data-index="4">
+              <span class="question-title">¿Hubo algún momento o ejercicio que te hiciera clic con el tema?</span>
+              <textarea name="q4" placeholder="Uno específico que recuerdes especialmente." rows="5"></textarea>
+            </div>
+            <div class="question-block" data-index="5">
+              <span class="question-title">Si volvieras a cursar materias con programación o cálculo numérico, ¿qué te gustaría sostener de esta experiencia?</span>
+              <textarea name="q5" placeholder="Y por qué." rows="5"></textarea>
+            </div>
+
+          <!-- NAV -->
+          <div class="question-navigation" id="question-nav">
+            <button type="button" class="btn btn-secondary" id="prev-btn" disabled>Volver</button>
+            <button type="button" class="btn btn-primary" id="next-btn">Siguiente pregunta</button>
+          </div>
+
+          <!-- FINAL FIELDS -->
+          <div class="final-fields" id="final-fields">
+            <div class="divider"></div>
+            <p class="section-label">Cierre · datos</p>
+
+            <div class="grid-2">
+              <label>
+                <span class="question-title">Nombre</span>
+                <input class="field" type="text" name="nombre" maxlength="120" required>
+              </label>
+              <label>
+                <span class="question-title">Instagram (opcional)</span>
+                <input class="field" type="text" name="instagram" maxlength="120" placeholder="@usuario">
+              </label>
+              <label>
+                <span class="question-title">WhatsApp (opcional)</span>
+                <input class="field" type="text" name="whatsapp" maxlength="60" inputmode="tel">
+              </label>
+              <label>
+                <span class="question-title">Frase que resuma tu experiencia (opcional)</span>
+                <input class="field" type="text" name="frase_destacada" maxlength="220" placeholder="Una línea directa">
+              </label>
+              <label style="grid-column:1/-1">
+                <span class="question-title">Aporte libre (opcional)</span>
+                <textarea name="comentario_libre" maxlength="1500" placeholder="Si querés sumar algo que no te pregunté, escribilo acá" rows="4"></textarea>
+              </label>
+            </div>
+
+            <!-- NPS -->
+            <div class="divider"></div>
+            <p class="question-title" style="margin-bottom:12px">¿Qué probabilidad hay de que recomiendes NumLab? (0 a 10)</p>
+            <div class="nps-scale" role="radiogroup" aria-label="NPS recomendación">
+              <label class="nps-option"><input type="radio" name="nps_recomendacion" value="0"><span>0</span></label>
+              <label class="nps-option"><input type="radio" name="nps_recomendacion" value="1"><span>1</span></label>
+              <label class="nps-option"><input type="radio" name="nps_recomendacion" value="2"><span>2</span></label>
+              <label class="nps-option"><input type="radio" name="nps_recomendacion" value="3"><span>3</span></label>
+              <label class="nps-option"><input type="radio" name="nps_recomendacion" value="4"><span>4</span></label>
+              <label class="nps-option"><input type="radio" name="nps_recomendacion" value="5"><span>5</span></label>
+              <label class="nps-option"><input type="radio" name="nps_recomendacion" value="6"><span>6</span></label>
+              <label class="nps-option"><input type="radio" name="nps_recomendacion" value="7"><span>7</span></label>
+              <label class="nps-option"><input type="radio" name="nps_recomendacion" value="8"><span>8</span></label>
+              <label class="nps-option"><input type="radio" name="nps_recomendacion" value="9"><span>9</span></label>
+              <label class="nps-option"><input type="radio" name="nps_recomendacion" value="10"><span>10</span></label>
+            </div>
+            <p class="meta-note" style="margin-top:8px">0 = nada probable · 10 = totalmente probable</p>
+
+            <div id="nps-reason-wrap" style="display:none; margin-top:20px">
+              <label>
+                <span class="question-title">¿Por qué elegiste esa puntuación? (opcional)</span>
+                <textarea name="nps_por_que" maxlength="1200" placeholder="Contame brevemente" rows="3"></textarea>
+              </label>
+            </div>
+
+            <!-- AUTORIZACIÓN -->
+            <div class="divider"></div>
+            <p class="question-title" style="margin-bottom:12px">Autorización de uso</p>
+            <div class="options">
+              <label class="radio-line">
+                <input type="radio" name="autorizacion" value="nombre_completo" required>
+                <span>Nombre completo</span>
+              </label>
+              <label class="radio-line">
+                <input type="radio" name="autorizacion" value="solo_nombre" required>
+                <span>Solo nombre</span>
+              </label>
+              <label class="radio-line">
+                <input type="radio" name="autorizacion" value="anonimo" required>
+                <span>Anónimo</span>
+              </label>
+            </div>
+
+            <label class="checkbox-line">
+              <input type="checkbox" name="consentimiento" required>
+              <span class="consent-text">Autorizo que fragmentos de estas respuestas puedan utilizarse en web, redes o piezas editoriales de NumLab Academy.</span>
+            </label>
+
+            <input class="hp" type="text" name="hp_site" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+            <p class="meta-note" style="margin-bottom:20px">Acceso privado. Uso interno de trazabilidad editorial · NumLab Academy.</p>
+
+            <button type="submit" class="btn btn-primary btn-whatsapp" id="submit-btn" style="margin-top:8px">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                Enviar por WhatsApp
+              </button>
+            <p class="error" id="submit-error"></p>
+            <p class="footer-note">NumLab Academy · numlab.com.ar · hola@numlab.com.ar · La Plata, Argentina</p>
+          </div>
+        </form>
+
+      <!-- SUCCESS -->
+      <div class="success" id="success-section">
+        <p class="eyebrow">Registro completado</p>
+        <div class="nav-logo" style="font-size:22px; margin-bottom:8px">Num<span style="color:var(--amber)">Lab</span> Academy</div>
+        <h2>Diagnóstico recibido.<br>Gracias por el criterio.</h2>
+        <div class="divider"></div>
+        <p>Tu respuesta fue registrada de forma privada en NumLab. Valoro mucho este tiempo y esta confianza.</p>
+        <p class="success-gratitude">Gracias a cada persona que confió en el método y permitió llegar hasta acá.</p>
+        <a href="https://numlab.com.ar">¿Querés ver la web completa? →</a>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    const TOTAL_QUESTIONS = 6;
+    let current = 0;
+    let questionsCompleted = false;
+
+    const questions = document.querySelectorAll('.question-block');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+    const progressFill = document.getElementById('progress-fill');
+    const progressLabel = document.getElementById('progress-label');
+    const stepPct = document.getElementById('step-pct');
+    const finalFields = document.getElementById('final-fields');
+    const questionNav = document.getElementById('question-nav');
+    const npsRadios = document.querySelectorAll('input[name="nps_recomendacion"]');
+    const npsReasonWrap = document.getElementById('nps-reason-wrap');
+    const submitError = document.getElementById('submit-error');
+
+    function updateProgress(idx) {
+      const pct = Math.round((idx / TOTAL_QUESTIONS) * 100);
+      progressFill.style.width = pct + '%';
+      progressLabel.textContent = 'Pregunta ' + (idx + 1) + ' de ' + TOTAL_QUESTIONS;
+      stepPct.textContent = pct + '%';
+    }
+
+    function showQuestion(idx) {
+      questions.forEach((q, i) => q.classList.toggle('active', i === idx));
+      prevBtn.disabled = idx === 0;
+      updateProgress(idx);
+      if (idx === TOTAL_QUESTIONS - 1) {
+        nextBtn.textContent = 'Continuar al cierre';
+      } else {
+        nextBtn.textContent = 'Siguiente pregunta';
+      }
+    }
+
+    prevBtn.addEventListener('click', () => {
+      if (current > 0) { current--; showQuestion(current); }
+    });
+
+    nextBtn.addEventListener('click', () => {
+      if (current < TOTAL_QUESTIONS - 1) {
+        current++;
+        showQuestion(current);
+      } else {
+        questionsCompleted = true;
+        questionNav.style.display = 'none';
+        questions.forEach(q => q.classList.remove('active'));
+        progressFill.style.width = '100%';
+        progressLabel.textContent = 'Preguntas completadas';
+        stepPct.textContent = '100%';
+        finalFields.classList.add('visible');
+        finalFields.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+
+    npsRadios.forEach(r => {
+      r.addEventListener('change', () => {
+        const val = parseInt(r.value);
+        npsReasonWrap.style.display = (val <= 8) ? 'block' : 'none';
+      });
+    });
+
+    function buildWhatsAppMessage(data) {
+      const wn = '+5492216906099';
+      const lines = ['*NumLab · Experiencia registrada*', ''];
+
+      const labels = [
+        '1. Materia o tema con dificultades',
+        '2. Valor del método y seguimiento',
+        '3. Diferencia con la trazabilidad',
+        '4. Confianza técnica reforzada',
+        '5. Momento de clic',
+        '6. Qué sostener de la experiencia'
+      ];
+
+      for (let i = 0; i < TOTAL_QUESTIONS; i++) {
+        const val = (data['q' + i] || '').trim();
+        if (val) { lines.push('*' + labels[i] + '*'); lines.push(val); lines.push(''); }
+      }
+
+      lines.push('---');
+      if (data.nombre) lines.push('*Nombre:* ' + data.nombre);
+      if (data.instagram) lines.push('*Instagram:* ' + data.instagram);
+      if (data.whatsapp) lines.push('*WhatsApp:* ' + data.whatsapp);
+      if (data.frase_destacada) lines.push('*Frase destacada:* ' + data.frase_destacada);
+      if (data.comentario_libre) { lines.push(''); lines.push('*Aporte libre:* ' + data.comentario_libre); }
+      if (data.nps_recomendacion) lines.push('*NPS:* ' + data.nps_recomendacion + '/10');
+      if (data.nps_por_que) lines.push('*Por qué:* ' + data.nps_por_que);
+      if (data.autorizacion) lines.push('*Autorización:* ' + data.autorizacion.replace('_', ' '));
+
+      const msg = lines.join('\n');
+      return 'https://wa.me/' + wn + '?text=' + encodeURIComponent(msg);
+    }
+
+    document.getElementById('exp-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      submitError.textContent = '';
+
+      const fd = new FormData(this);
+      const data = Object.fromEntries(fd.entries());
+
+      if ((data.hp_site || '').trim()) return;
+
+      if (!data.nombre || !data.nombre.trim()) {
+        submitError.textContent = 'El nombre es requerido.';
+        return;
+      }
+      if (!data.nps_recomendacion) {
+        submitError.textContent = 'Seleccioná una puntuación NPS antes de enviar.';
+        return;
+      }
+      if (!data.autorizacion) {
+        submitError.textContent = 'Indicá el tipo de autorización de uso.';
+        return;
+      }
+      if (!data.consentimiento) {
+        submitError.textContent = 'Necesitamos tu consentimiento para continuar.';
+        return;
+      }
+
+      const url = buildWhatsAppMessage(data);
+      window.open(url, '_blank');
+
+      document.getElementById('exp-form').style.display = 'none';
+      document.querySelector('.hero').style.display = 'none';
+      const success = document.getElementById('success-section');
+      success.classList.add('visible');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    showQuestion(0);
+  </script>
+</body>
+</html>
