@@ -75,12 +75,13 @@
       </p>
     </div>
     <h1 class="hero-title" id="hero-title">
-      <span id="word-clases">ACOMPAÑAMIENTO</span><br>
-      <span class="o" id="word-particulares">TÉCNICO</span>
+      <span id="word-clases">ACOMPAÑAMIENTO</span> <span class="o" id="word-particulares">TÉCNICO</span>
     </h1>
     <div class="fade">
+      <p class="hero-subtitle" id="hero-subtitle">Introd. a la Programación y Análisis Numérico (IPAN)</p>
+    </div>
+    <div class="fade">
       <p class="hero-lead" id="hero-lead">
-        Para materias con <mark>programación</mark> y <mark>cálculo numérico</mark>.<br>
         NumLab trabaja con <mark>método</mark>, <mark>práctica guiada</mark> y <mark>seguimiento real</mark>.<br>
         Cupos reducidos para sostener <mark>foco</mark>, <mark>continuidad</mark> y <mark>precisión técnica</mark>.
       </p>
@@ -90,7 +91,7 @@
     <div class="fade">
       <div class="social-strip">
         <div class="stat-pill"><b>+<span class="count-up" data-target="4" data-suffix=" años">0</span></b>&nbsp;acompañando estudiantes</div>
-        <div class="stat-pill"><b>+<span class="count-up" data-target="180" data-suffix=" hs">0</span></b>&nbsp;de trabajo técnico con estudiantes <span class="u-dim-note">(ABR 2026)</span></div>
+        <div class="stat-pill"><b>+<span class="count-up" data-target="250" data-suffix=" hs">0</span></b>&nbsp;de trabajo técnico con estudiantes <span class="u-dim-note">(AGO 2026)</span></div>
         <div class="stat-pill">Seguimiento · trazabilidad · código en vivo</div>
       </div>
     </div>
@@ -122,22 +123,6 @@
   <section id="packs" class="section">
     <p class="section-tag">tarifas</p>
     <h2 class="section-title reveal nl-section__title--reveal">Precios y packs</h2>
-    <p class="nl-section__intro">
-      Cuanto más horas comprás, menor es el costo por hora efectiva.
-      Cada pack se distribuye en varias clases. Vigencia: 5h (30 días) · 10h (45 días) · 20h (60 días).
-    </p>
-
-    <!-- Selector qué pack conviene -->
-    <div class="pack-selector" id="pack-selector">
-      <p class="pack-selector-label">¿Cuál es tu situación?</p>
-      <div class="pack-selector-pills">
-        <button class="selector-pill" data-target="pack-individual">💬 Duda puntual</button>
-        <button class="selector-pill" data-target="pack-5h">⚡ Parcial cerca</button>
-        <button class="selector-pill" data-target="pack-10h">🎯 Quiero continuidad</button>
-        <button class="selector-pill" data-target="pack-20h">📅 Seguimiento de cursada</button>
-      </div>
-      <p class="pack-selector-hint" id="selector-hint"></p>
-    </div>
 
     <div class="packs-grid">
 
@@ -165,30 +150,18 @@
         <div class="pack-distribuible">Distribuible hasta en 6 clases</div>
       </div>
 
-      <!-- 20h -->
-      <div class="pack-card premium reveal-spring reveal-delay-2" id="pack-20h">
+      <!-- 15h -->
+      <div class="pack-card premium reveal-spring reveal-delay-2" id="pack-15h">
           <div class="badge-row"><span class="pack-badge premium-badge">✦ Seguimiento selectivo</span></div>
-          <div class="pack-name">20 hs</div>
+          <div class="pack-name">15 hs</div>
           <p class="pack-desc">Pensado para cursada completa o varias unidades. Se coordina según agenda y continuidad real.</p>
           <div class="pack-price">
-            <b>$340.000</b>
+            <b>$255.000</b>
             <span class="bonus"> · 15% off · $17.000/h efectiva</span>
           </div>
-          <div class="pack-distribuible">Distribuible hasta en 12 clases · sujeto a agenda</div>
+          <div class="pack-distribuible">Distribuible hasta en 9 clases · sujeto a agenda</div>
       </div>
 
-    </div>
-
-
-    <!-- Chip clase individual -->
-    <div id="pack-individual" class="nl-pack-individual__row">
-      <span class="nl-pack-individual__label">Diagnóstico puntual</span>
-      <span class="nl-pack-individual__sep">·</span>
-      <span class="nl-pack-individual__price">$20.000<span class="nl-pack-individual__price-unit">/hora</span></span>
-      <span class="nl-pack-individual__sep">·</span>
-      <span class="nl-pack-individual__text">Clases de 1 h a 1 h 30 min</span>
-      <span class="nl-pack-individual__sep">·</span>
-      <span class="nl-pack-individual__text">Sin descuento · si se extiende, se cobra proporcional</span>
     </div>
 
     <!-- Incluido en todos los packs -->
@@ -198,22 +171,35 @@
         <span>📋 Plan según programa y fecha</span>
         <span>🔁 Ejercitación guiada + corrección en tiempo real</span>
         <span>💻 MATLAB / Octave / C++ — el código que necesitás</span>
+        <span>💳 Descuento válido solo con pago 100% adelantado</span>
       </div>
     </div>
 
-    <!-- Formato grupal -->
-    <div class="reveal-fade nl-group-format__card">
-      <p class="nl-group-format__tag">Formato grupal</p>
-      <div class="nl-group-format__row">
-        <p class="nl-group-format__title">Máximo 3 estudiantes · misma materia y cátedra</p>
-        <span class="nl-group-format__price">$15.000/h por estudiante <span class="nl-group-format__price-note">· 25% off</span></span>
-      </div>
-      <p class="nl-group-format__copy">
-        Cuando el grupo está bien armado, el formato grupal combina <strong>foco técnico</strong>, <strong>ritmo compartido</strong> y <strong>mejor rendimiento económico</strong>. Trabajamos sobre la misma materia y cátedra, con seguimiento real y criterio de NumLab. Se define según nivel del grupo, tema a trabajar y agenda disponible.
-      </p>
-      <a class="btn btn-ghost nl-btn--compact" href="#" id="cta-wa-grupo" aria-label="Consultar formato grupal">Consultar disponibilidad grupal →</a>
-    </div>
+    <!-- Otros formatos: diagnóstico, grupal -->
+    <div class="reveal-fade nl-alt-formats">
+      <p class="nl-alt-formats__tag">Otros formatos</p>
 
+      <div class="nl-alt-formats__item">
+        <div class="nl-alt-formats__info">
+          <p class="nl-alt-formats__title">Hora de clase</p>
+          <p class="nl-alt-formats__copy">Clases virtuales para diagnosticar, ordenar un tema puntual o ir por una explicación. El diagnóstico viene incluido en tu primera sesión.</p>
+        </div>
+        <div class="nl-alt-formats__cta">
+          <span class="nl-alt-formats__price">$20.000<span class="nl-alt-formats__price-unit">/hora</span> <span class="nl-alt-formats__price-note">· proporcional si se extiende</span></span>
+        </div>
+      </div>
+
+      <div class="nl-alt-formats__item">
+        <div class="nl-alt-formats__info">
+          <p class="nl-alt-formats__title">Grupal · máximo 4 estudiantes, misma materia y cátedra</p>
+          <p class="nl-alt-formats__copy">Mismo método y seguimiento, repartido entre hasta 4 estudiantes de la misma cátedra. Requiere nivel parejo y agenda compatible.</p>
+        </div>
+        <div class="nl-alt-formats__cta">
+          <span class="nl-alt-formats__price">$18.000<span class="nl-alt-formats__price-unit">/h</span></span>
+          <a class="btn btn-ghost nl-btn--compact" href="#" id="cta-wa-grupo" aria-label="Consultar formato grupal">Consultar →</a>
+        </div>
+      </div>
+    </div>
 
   </section>
 
@@ -226,7 +212,7 @@
     <div class="method-cards">
       <div class="method-card reveal-fade">
         <div class="method-head">
-          <div class="method-letter">A</div>
+          <div class="method-letter" aria-hidden="true">🎯</div>
           <h3 class="method-title">Diagnóstico</h3>
         </div>
         <ul class="method-bullets">
@@ -239,7 +225,7 @@
 
       <div class="method-card reveal-fade reveal-delay-1">
         <div class="method-head">
-          <div class="method-letter">B</div>
+          <div class="method-letter" aria-hidden="true">📐</div>
           <h3 class="method-title">Práctica guiada</h3>
         </div>
         <ul class="method-bullets">
@@ -252,7 +238,7 @@
 
       <div class="method-card reveal-fade reveal-delay-2">
         <div class="method-head">
-          <div class="method-letter">C</div>
+          <div class="method-letter" aria-hidden="true">📈</div>
           <h3 class="method-title">Seguimiento</h3>
         </div>
         <ul class="method-bullets">
@@ -264,63 +250,17 @@
       </div>
     </div>
 
-    <div class="reveal-fade nl-focus-output__card">
-      <div class="nl-focus-output__title">output técnico</div>
-      <div class="nl-focus-output__body">
-        <span class="nl-focus-output__key">input</span>  → ejercicios tipo parcial<br>
-        <span class="nl-focus-output__key">debug</span>  → error + corrección en vivo<br>
-        <span class="nl-focus-output__key">output</span> → código funcional y criterio de resolución
-      </div>
-    </div>
-
-    <p class="cobertura-label reveal-fade">Qué te llevás en 1–2 sesiones</p>
-    <div class="results-grid">
-      <div class="result-card reveal-fade">
-        <div class="result-head">
-          <div class="result-icon">🎯</div>
-          <h3 class="result-title">Orden y foco</h3>
-        </div>
-        <ul class="result-bullets">
-          <li>Ruta de estudio</li>
-          <li>Prioridades claras</li>
-          <li>Plan de práctica</li>
-        </ul>
-      </div>
-      <div class="result-card reveal-fade reveal-delay-1">
-        <div class="result-head">
-          <div class="result-icon">📐</div>
-          <h3 class="result-title">Ejercicios que importan</h3>
-        </div>
-        <ul class="result-bullets">
-          <li>Paso a paso</li>
-          <li>Errores típicos</li>
-          <li>Criterio de corrección</li>
-        </ul>
-      </div>
-      <div class="result-card reveal-fade reveal-delay-2">
-        <div class="result-head">
-          <div class="result-icon">💻</div>
-          <h3 class="result-title">Código usable</h3>
-        </div>
-        <ul class="result-bullets">
-          <li>Scripts reutilizables</li>
-          <li>Trazabilidad</li>
-          <li>Validación básica</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="proceso-disclaimer reveal-fade">Método + avance medible + criterio técnico</div>
-
     <div class="cobertura-grid nl-coverage--top-margin">
       <div class="reveal-fade">
-        <p class="cobertura-label">Materias</p>
+        <p class="cobertura-label">Materias y temas</p>
         <div class="cobertura-tags">
           <span class="materia feat">IPAN</span>
+          <span class="materia">Raíces de ecuaciones</span>
           <span class="materia">Derivación numérica</span>
           <span class="materia">Interpolación</span>
           <span class="materia">Ajuste</span>
           <span class="materia">Integración numérica</span>
+          <span class="materia">Ecuaciones diferenciales</span>
           <span class="materia">SEL</span>
           <span class="materia">SENL</span>
         </div>
@@ -550,13 +490,12 @@
   <!-- CTA Final -->
   <section id="contacto" class="cta-final reveal-cta">
     <p class="section-tag">contacto</p>
-    <h2>Traé tus dudas y tus temas.<br><span>Lo ordenamos con criterio.</span></h2>
+    <h2>Convertí tus dudas en decisiones claras.<br><span>Nosotros te ayudamos a ordenar el camino.</span></h2>
     <p>
-      Mandanos materia, tema, fecha y material disponible.<br>
-      Lo revisamos y te decimos por dónde conviene arrancar.
+      Analizamos tu situación, ponemos foco en lo importante y te damos una mirada estratégica para que puedas avanzar con claridad.
     </p>
     <p class="nl-cta__small-note">
-      Agenda limitada para sostener foco, continuidad y trabajo serio.
+      Contanos qué necesitás. Nosotros nos ocupamos de encontrar por dónde empezar.
     </p>
     <div class="cta-row nl-cta__row--centered">
       <a class="btn btn-wa" id="cta-wa-final" href="https://wa.me/5492216906099" aria-label="Reservar por WhatsApp"><svg class="icon-svg-shrink" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</a>
