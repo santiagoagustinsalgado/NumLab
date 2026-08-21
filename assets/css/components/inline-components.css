@@ -3,49 +3,164 @@
   background: linear-gradient(160deg, rgb(18, 10, 42) 0%, rgb(1, 40, 67) 60%);
 }
 
-.nl-pack-individual__row {
-  margin-top: 14px;
-  width: 100%;
+/* Clase Diagnóstico — producto de entrada, primero en #packs */
+.nl-diag {
+  max-width: 620px;
+  margin: 0 auto 20px;
+  padding: 30px 32px;
+  border: 1px solid rgba(233, 162, 59, 0.4);
+  border-radius: var(--radius);
+  background: rgb(1, 40, 67);
+  box-shadow: 0 0 24px rgba(233, 162, 59, 0.08);
+  text-align: center;
+}
+
+.nl-diag__head {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 10px 16px;
-  padding: 28px 32px;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.nl-diag__badge {
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--accent2);
+  border: 1px solid rgba(233, 162, 59, 0.5);
+  border-radius: 999px;
+  padding: 4px 12px;
+}
+
+.nl-diag__price {
+  font-family: var(--mono);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text);
+  white-space: nowrap;
+}
+
+.nl-diag__price-unit {
+  font-size: 12px;
+  color: var(--muted);
+  font-weight: 400;
+}
+
+.nl-diag__title {
+  font-family: var(--display);
+  font-size: 26px;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+
+.nl-diag__desc {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 0 auto 12px;
+  max-width: 50ch;
+}
+
+.nl-diag__note {
+  font-size: 12px;
+  color: var(--accent2);
+  font-family: var(--mono);
+  letter-spacing: 0.2px;
+  margin-bottom: 20px;
+}
+
+/* Otros formatos — grupal e Intensivo, consolidados en una sola lista compacta */
+.nl-alt-formats {
+  margin-top: 24px;
+  padding: 20px 24px 4px;
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  background: rgb(1, 40, 67);
+  background: rgb(1, 35, 56);
 }
 
-.nl-pack-individual__label {
+.nl-alt-formats__tag {
   font-family: var(--mono);
-  font-size: 11px;
-  color: var(--muted);
-  letter-spacing: 0.5px;
+  font-size: 10px;
+  letter-spacing: 2px;
   text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 14px;
 }
 
-.nl-pack-individual__sep {
-  color: var(--border);
-  font-size: 12px;
+.nl-alt-formats__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 14px 0 18px;
+  border-top: 1px solid var(--border);
 }
 
-.nl-pack-individual__price {
-  font-family: var(--mono);
-  font-size: 16px;
+.nl-alt-formats__item:first-of-type {
+  border-top: none;
+  padding-top: 0;
+}
+
+.nl-alt-formats__info {
+  flex: 1 1 320px;
+  min-width: 0;
+}
+
+.nl-alt-formats__title {
+  font-size: 14px;
+  font-weight: 600;
   color: var(--text);
-  font-weight: 700;
+  margin-bottom: 4px;
 }
 
-.nl-pack-individual__price-unit {
+.nl-alt-formats__copy {
+  font-size: 12.5px;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.nl-alt-formats__cta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
+}
+
+.nl-alt-formats__price {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--accent2);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.nl-alt-formats__price-unit {
   font-size: 11px;
   color: var(--muted);
   font-weight: 400;
 }
 
-.nl-pack-individual__text {
-  font-size: 13px;
+.nl-alt-formats__price-note {
+  font-size: 10px;
   color: var(--muted);
+  font-weight: 400;
+}
+
+@media (max-width: 640px) {
+  .nl-alt-formats__item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nl-alt-formats__cta {
+    width: 100%;
+    justify-content: space-between;
+  }
 }
 
 .nl-btn--compact {

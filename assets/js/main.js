@@ -11,5 +11,6 @@
     run('initFaq');
     run('initPacks');
     run('initCounters');
+    run('initIntensivo');
   });
 })();

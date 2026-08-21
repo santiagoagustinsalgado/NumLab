@@ -33,8 +33,15 @@ Modalidad preferida: virtual / presencial
 
 Hay lugar para un grupo?`;
 
+  const msgDiagnostico = `Hola! Quiero coordinar una clase diagnóstico.
+
+Materia: ____
+Tema o unidad: ____
+Fecha de parcial: ____`;
+
   const waHref = window.waLink(msgReserva);
   const waGrupoHref = window.waLink(msgGrupo);
+  const waDiagnosticoHref = window.waLink(msgDiagnostico);
   const emailHref = "mailto:" + window.CFG.email + "?subject=Consulta%20NumLab%20Academy&body=" + encodeURIComponent(msgEmail);
 
   const el = (id) => document.getElementById(id);
@@ -43,6 +50,7 @@ Hay lugar para un grupo?`;
   if (el("cta-wa-final")) el("cta-wa-final").href = waHref;
   if (el("cta-wa-sticky")) el("cta-wa-sticky").href = waHref;
   if (el("cta-wa-grupo")) el("cta-wa-grupo").href = waGrupoHref;
+  if (el("cta-wa-diagnostico")) el("cta-wa-diagnostico").href = waDiagnosticoHref;
 
   if (el("cta-email")) el("cta-email").href = emailHref;
 

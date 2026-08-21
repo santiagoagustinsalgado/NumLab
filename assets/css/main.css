@@ -20,7 +20,7 @@
     }
 /* moved to legacy/header.css */
 /* moved to legacy/hero.css */
-/* â”€â”€ Sections â”€â”€ */
+/* ── Sections ── */
     .section {
       margin-top: 80px; scroll-margin-top: 72px;
     }
@@ -38,7 +38,7 @@
       line-height: 1.05; letter-spacing: .5px; margin-bottom: 24px;
     }
 /* moved to legacy/packs.css */
-/* â”€â”€ Pillares â”€â”€ */
+/* ── Pillares ── */
     .pillars {
       display: grid; gap: 3px;
     }
@@ -134,7 +134,7 @@
     .cond-card p {
       font-size: 14px; color: var(--muted); line-height: 1.6;
     }
-/* LÃ­mites */
+/* Límites */
     .limits-list {
       display: grid; gap: 8px;
     }
@@ -248,7 +248,7 @@
       animation-delay:.40s
     }
 @keyframes fi { to { opacity:1; transform:translateY(0); } }
-/* â”€â”€ Testimonios â”€â”€ */
+/* ── Testimonios ── */
     .testimonios {
       display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 20px;
     }
@@ -280,7 +280,7 @@
     .testimonio cite b {
       color: var(--accent2);
     }
-/* â”€â”€ Resultados tÃ­picos â”€â”€ */
+/* ── Resultados típicos ── */
     .cards {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -309,7 +309,7 @@
       padding-left: 16px; position: relative; line-height: 1.55;
     }
     .card ul li::before {
-      content: 'â€”'; position: absolute; left: 0;
+      content: '—'; position: absolute; left: 0;
       color: var(--accent); font-size: 11px;
     }
     .muted {
@@ -318,8 +318,8 @@
     .muted b {
       color: var(--text);
     }
-/* â”€â”€ Scroll reveal â€” sistema variado â”€â”€ */
-/* â”€â”€ Blur â†’ Foco: cards, testimonios, result cards â”€â”€ */
+/* ── Scroll reveal — sistema variado ── */
+/* ── Blur → Foco: cards, testimonios, result cards ── */
     .reveal-scale,
     .reveal-spring {
       opacity: 0;
@@ -336,7 +336,7 @@
       filter: blur(0);
       transform: translateY(0);
     }
-/* â”€â”€ Clip / Cortina: pillares, pasos, tÃ­tulos â”€â”€ */
+/* ── Clip / Cortina: pillares, pasos, títulos ── */
     .reveal,
     .reveal-left {
       opacity: 0;
@@ -349,7 +349,7 @@
       opacity: 1;
       transform: translateX(0);
     }
-/* â”€â”€ Fade lento: chips, condiciones, FAQ â”€â”€ */
+/* ── Fade lento: chips, condiciones, FAQ ── */
     .reveal-fade {
       opacity: 0;
       transform: translateY(18px);
@@ -360,7 +360,7 @@
       opacity: 1;
       transform: translateY(0);
     }
-/* â”€â”€ CTA final â€” blur + scale dramÃ¡tico â”€â”€ */
+/* ── CTA final — blur + scale dramático ── */
     .reveal-cta {
       opacity: 0;
       will-change: transform;
@@ -388,8 +388,8 @@
     .reveal-delay-4 {
       transition-delay: .48s;
     }
-/* â”€â”€ Mobile: sin blur (performance) â”€â”€ */
-/* â”€â”€ Reducir movimiento: respeta preferencia del sistema â”€â”€ */
+/* ── Mobile: sin blur (performance) ── */
+/* ── Reducir movimiento: respeta preferencia del sistema ── */
 @media (prefers-reduced-motion: reduce) {
       .reveal, .reveal-left, .reveal-spring,
       .reveal-scale, .reveal-fade, .reveal-cta {
@@ -410,13 +410,13 @@
       animation: none !important;
     }
     }
-/* â”€â”€ Steps: hover animado â”€â”€ */
+/* ── Steps: hover animado ── */
     .step:hover {
       border-color: var(--border-o);
       background: rgb(1, 42, 73);
       transform: translateX(6px);
     }
-    /* â”€â”€ LÃ­mites: hover general â”€â”€ */
+    /* ── Límites: hover general ── */
     .limit-item {
       transition: border-color .2s, background .2s;
       cursor: default;
@@ -425,7 +425,7 @@
       border-color: var(--border-o);
       background: rgb(1,41,71);
     }
-/* Primer item (no examen) â†’ rojo al hover */
+/* Primer item (no examen) → rojo al hover */
     .limit-item.danger {
       position: relative;
       border-color: rgba(255,72,72,.72) !important;
@@ -468,7 +468,7 @@
     .limit-item.danger:hover .icon {
       transform: scale(1.12);
     }
-/* â”€â”€ Danger icon âœ• â”€â”€ */
+/* ── Danger icon ✕ ── */
     .danger-icon {
       font-family: var(--mono);
       font-size: 14px ;
@@ -480,7 +480,7 @@
       color: #ff6b6b;
       transform: scale(1.4) rotate(90deg);
     }
-/* â”€â”€ Otros limit-items: hover Ã¡mbar suave â”€â”€ */
+/* ── Otros limit-items: hover ámbar suave ── */
     .limit-item:not(.danger):hover {
       border-color: rgba(233,162,59,.4);
       background: rgb(13,38,49);
@@ -490,8 +490,8 @@
       display: inline-block;
       transition: transform .2s;
     }
-/* â”€â”€ Punto rojo titilante â”€â”€ */
-/* Punto rojo â€” siempre encendido, igual que el verde */
+/* ── Punto rojo titilante ── */
+/* Punto rojo — siempre encendido, igual que el verde */
     .red-pulse {
       display: inline-block;
       width: 7px; height: 7px; border-radius: 50%;
@@ -503,7 +503,7 @@
       0%,100% { opacity:1; box-shadow: 0 0 0 0 rgba(255,59,59,.6); }
       50%      { opacity:.7; box-shadow: 0 0 0 6px rgba(255,59,59,0); }
     }
-/* â”€â”€ Condiciones rediseÃ±adas â”€â”€ */
+/* ── Condiciones rediseñadas ── */
     .cond-list {
       display: grid; gap: 8px;
     }
@@ -550,7 +550,7 @@
     .cond-body p {
       font-size: 14px; color: var(--muted); line-height: 1.6; margin: 0;
     }
-/* â”€â”€ BotÃ³n WhatsApp â”€â”€ */
+/* ── Botón WhatsApp ── */
     .btn-wa {
       background: rgb(1, 63, 105);
       color: #fff !important;
@@ -589,7 +589,7 @@
       border-color: rgba(44,125,160,1);
       box-shadow: 0 8px 32px rgba(1,73,124,.45), inset 0 1px 0 rgba(255,255,255,.12);
     }
-/* Hero cinematic â€” estado inicial oculto */
+/* Hero cinematic — estado inicial oculto */
     #word-clases, #word-particulares {
       display: inline-block;
       will-change: transform;
@@ -621,7 +621,6 @@
     .pillars,
     .steps,
     .method-cards,
-    .results-grid,
     .testimonios,
     .steps-compact {
       gap: clamp(14px, 1.35vw, 24px);
@@ -641,7 +640,7 @@
 }
 @media (max-width: 900px) {
     }
-/* â”€â”€ Focus visible â€” accesibilidad â”€â”€ */
+/* ── Focus visible — accesibilidad ── */
     :focus-visible {
       outline: 2px solid var(--accent);
       outline-offset: 3px;
@@ -662,7 +661,7 @@
       outline-offset: 2px;
       border-radius: 3px;
     }
-/* â”€â”€ Condiciones: pills visibles â”€â”€ */
+/* ── Condiciones: pills visibles ── */
     .cond-pills {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -703,7 +702,7 @@
     .cond-pill--feature .cond-pill-icon { font-size: 20px; }
     .cond-pill--feature b { font-size: 14px; }
     .cond-pill--feature span { font-size: 12.5px; }
-/* AcordeÃ³n condiciones extendidas */
+/* Acordeón condiciones extendidas */
     .cond-details {
       margin-top: 28px;
       border: 1px solid rgba(233,162,59,.34);
@@ -729,7 +728,7 @@
       color: var(--text);
     }
     .cond-details > summary::before {
-      content: 'â–¸'; font-size: 10px; color: var(--accent);
+      content: '▸'; font-size: 10px; color: var(--accent);
       transition: transform .2s ease, color .22s ease;
     }
     .cond-details[open] > summary {
@@ -748,7 +747,7 @@
     .cond-details .cond-row {
       padding: 0; border: none; background: none;
     }
-/* â”€â”€ Method cards â€” CÃ³mo trabajamos â”€â”€ */
+/* ── Method cards — Cómo trabajamos ── */
     .method-cards {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -774,7 +773,7 @@
       background: rgb(29,48,49);
       border: 1px solid rgba(233,162,59,.3);
       color: var(--accent2); font-family: var(--mono);
-      font-size: 14px; font-weight: 700;
+      font-size: 16px; font-weight: 700; line-height: 1;
       display: flex; align-items: center; justify-content: center;
       flex-shrink: 0;
     }
@@ -798,7 +797,7 @@
       padding-left: 14px; position: relative; line-height: 1.5;
     }
     .method-bullets li::before {
-      content: 'â€”'; position: absolute; left: 0;
+      content: '—'; position: absolute; left: 0;
       color: var(--accent2); font-size: 11px;
     }
     .method-footer {
@@ -807,7 +806,7 @@
       margin: 0; padding-top: 6px;
       border-top: 1px solid rgb(36,52,50);
     }
-/* â”€â”€ Cobertura â”€â”€ */
+/* ── Cobertura ── */
     .section-sub {
       font-size: 14px; color: var(--muted);
       margin-bottom: 20px; margin-top: -8px;
@@ -826,7 +825,7 @@
       display: flex; flex-wrap: wrap; gap: 8px;
       align-items:center;
       }
-/* â”€â”€ Pasos compactos â”€â”€ */
+/* ── Pasos compactos ── */
     .steps-compact {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -850,124 +849,7 @@
     .step-compact p {
       font-size: 13px; color: var(--muted); line-height: 1.6; margin: 0;
     }
-/* â”€â”€ Resultados tÃ­picos â”€â”€ */
-    .results-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 12px;
-      margin-top: 12px;
-    }
-    .result-card {
-      padding: 18px 16px;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      background: rgb(1, 37, 60);
-      transition: border-color .25s, transform .25s;
-    }
-    .result-card:hover {
-      border-color: var(--accent2);
-      transform: translateY(-3px);
-    }
-    .result-head {
-      display:flex;
-      align-items:center;
-      gap:10px;
-      margin-bottom:10px;
-    }
-    .result-icon {
-      font-size: 20px; line-height: 1; flex-shrink:0;
-    }
-    .result-title {
-      font-size: 14px; font-weight: 700;
-      color: var(--text); margin: 0;
-      line-height: 1.2;
-    }
-    .result-bullets {
-      list-style: none; padding: 0; margin: 0;
-      display: flex; flex-direction: column; gap: 5px;
-    }
-    .result-bullets li {
-      font-size: 12px; color: var(--muted);
-      padding-left: 12px; position: relative; line-height: 1.5;
-    }
-    .result-bullets li::before {
-      content: "â€”"; position: absolute; left: 0;
-      color: var(--accent2); font-size: 10px;
-    }
-    .proceso-disclaimer {
-      margin-top: 20px;
-      font-family: var(--mono); font-size: 11px;
-      color: var(--muted); letter-spacing: .5px;
-      border-top: 1px solid var(--border);
-      padding-top: 14px;
-      text-align: center;
-    }
-/* â”€â”€ Selector pack â”€â”€ */
-    .pack-selector {
-      margin-bottom: 24px;
-      padding: 24px 24px 20px;
-      border: 1px solid rgba(44,125,160,.4);
-      border-radius: 16px;
-      background: rgb(1, 35, 56);
-      box-shadow: 0 0 32px rgba(44,125,160,.1), inset 0 1px 0 rgba(169,214,229,.07);
-      text-align: center;
-    }
-    .pack-selector-label {
-      font-family: var(--mono);
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: .18em;
-      color: #89c2d9;
-      text-transform: uppercase;
-      margin-bottom: 16px;
-      opacity: .8;
-    }
-    .pack-selector-label::before {
-      content: '//';
-      color: rgba(44,125,160,.4);
-    }
-    .pack-selector-pills {
-      display: flex; flex-wrap: wrap; gap: 10px;
-      justify-content: center;
-    }
-    .selector-pill {
-      padding: 12px 22px;
-      border-radius: 999px;
-      border: 1.5px solid rgba(44,125,160,.5);
-      background: rgb(1, 38, 64);
-      font-family: var(--mono);
-      font-size: 13px;
-      font-weight: 700;
-      color: #a9d6e5;
-      cursor: pointer;
-      transition: all .25s ease;
-      letter-spacing: .3px;
-      white-space: nowrap;
-      box-shadow: 0 0 10px rgba(44,125,160,.15), inset 0 1px 0 rgba(169,214,229,.08);
-    }
-    .selector-pill:hover {
-      border-color: #89c2d9;
-      background: rgb(1, 50, 82);
-      color: #e8f0ff;
-      transform: translateY(-3px) scale(1.03);
-      box-shadow: 0 6px 24px rgba(44,125,160,.45), 0 0 16px rgba(44,125,160,.25), inset 0 1px 0 rgba(255,255,255,.1);
-    }
-    .selector-pill.active {
-      border-color: var(--accent);
-      background: rgb(43, 48, 32);
-      color: var(--accent);
-      box-shadow: 0 0 20px rgba(233,162,59,.35), 0 4px 16px rgba(233,162,59,.2);
-      transform: translateY(-2px);
-      transform: translateY(-2px);
-    }
-    .pack-selector-hint {
-      font-size: 12px; color: var(--accent2);
-      font-family: var(--mono); margin-top: 10px;
-      min-height: 18px; letter-spacing: .3px;
-      transition: opacity .3s;
-    }
-/* Pack highlight al seleccionar */
-/* â”€â”€ Timeline conectado â”€â”€ */
+/* ── Timeline conectado ── */
     .steps-timeline {
       position: relative;
     }
@@ -1016,7 +898,7 @@
         transform: scale(1) translateY(0);
       }
 
-    /* Desactivar animaciones con box-shadow en mobile â€” muy costosas en GPU */
+    /* Desactivar animaciones con box-shadow en mobile — muy costosas en GPU */
       .status-pill          { animation: none; }
       .cta-final            { animation: none; }
       /* Simplificar blur del hero en mobile */
@@ -1027,8 +909,8 @@
         background: rgb(1, 55, 90);
       }
 
-    /* Android: grid rows fijos â†’ auto para evitar desborde de texto */
-      /* Android: scale en hover/active causa deformaciÃ³n en touch */
+    /* Android: grid rows fijos → auto para evitar desborde de texto */
+      /* Android: scale en hover/active causa deformación en touch */
       /* Android: will-change con filter es muy costoso */
       .reveal-spring, .reveal-scale, .reveal-cta {
         will-change: opacity !important;
@@ -1045,7 +927,6 @@
 
     .cobertura-grid { grid-template-columns: 1fr; }
       .method-cards { grid-template-columns: 1fr; }
-      .results-grid { grid-template-columns: 1fr; }
       .cond-pills { grid-template-columns: 1fr; }
       .cond-pill--feature { grid-column: auto; }
       .steps-compact { grid-template-columns: 1fr; }
@@ -1055,7 +936,7 @@
       .cta-final { padding: 36px 20px ; }
       
     }
-/* â”€â”€ Logo tipogrÃ¡fico â€” fiel al og.png â”€â”€ */
+/* ── Logo tipográfico — fiel al og.png ── */
     .logo-num {
       font-family: "DM Sans", sans-serif;
       font-weight: 700;
@@ -1082,7 +963,7 @@
     .footer-trademark .logo-lab {
       font-size: 10px;
     }
-/* â”€â”€ Logo icon NL â”€â”€ */
+/* ── Logo icon NL ── */
     .logo-icon {
       width: 30px; height: 30px;
       border-radius: 7px;
@@ -1109,8 +990,8 @@
       line-height: 1;
     }
 
-    /* â”€â”€ Caret fondo hero â”€â”€ */
-/* â”€â”€ Grid de fondo â”€â”€ */
+    /* ── Caret fondo hero ── */
+/* ── Grid de fondo ── */
     body::after {
       content: '';
       position: fixed; inset: 0;

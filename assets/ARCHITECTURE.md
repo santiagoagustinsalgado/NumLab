@@ -16,6 +16,7 @@
 - `assets/css/base/`: reset, global utility primitives.
 - `assets/css/components/`: reusable component-level overrides.
 - `assets/css/sections/`: section-specific styling.
+- `assets/css/sections/intensivo.css`: Intensivo pre-parcial (`intensivo.html` + index teaser), `nl-int-*` prefix, `--nli-*` tokens.
 - `assets/css/utilities/`: one-purpose helper classes.
 
 ## JS modules
@@ -28,6 +29,7 @@
 - `assets/js/modules/faq.js`: FAQ behaviors.
 - `assets/js/modules/packs.js`: pack selector/ripple interactions.
 - `assets/js/modules/counters.js`: count-up numbers.
+- `assets/js/modules/intensivo.js`: wires `window.INTENSIVO` (site-config.js) into `[data-int-field]`/`[data-int-wa]` elements on index.html and intensivo.html.
 
 ## Checklist for new changes
 

@@ -11,4 +11,5 @@
 @import './base/base.css';
 @import './components/inline-components.css';
 @import './sections/inline-sections.css';
+@import './sections/intensivo.css';
 @import './utilities/inline-utilities.css';

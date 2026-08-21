@@ -1,4 +1,4 @@
-﻿/* â”€â”€ Hero â”€â”€ */
+﻿/* ── Hero ── */
     .hero {
       min-height: 100dvh;
       min-height: 100vh;
@@ -24,6 +24,16 @@
     }
     .hero-title .o {
       color: var(--accent);
+    }
+    .hero-subtitle {
+      font-family: var(--body);
+      font-weight: 700;
+      font-size: clamp(18px, 2.6vw, 24px);
+      line-height: 1.35;
+      color: var(--accent2);
+      letter-spacing: 0.1px;
+      max-width: 54ch;
+      margin-bottom: 18px;
     }
     .hero-lead {
       font-size: 17px; color: var(--muted); line-height: 3.5;
@@ -88,6 +98,7 @@
 @media (max-width: 480px) {
     .hero { padding: 72px 0 40px; }
     .hero-title { font-size: clamp(48px, 16vw, 80px); }
+    .hero-subtitle { font-size: 17px; }
     .hero-lead { font-size: 15px; }
 
     .social-strip { flex-direction: column; gap: 8px; }
