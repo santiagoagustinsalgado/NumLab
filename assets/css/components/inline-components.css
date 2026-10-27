@@ -187,3 +187,11 @@
   font-weight: 700;
 }
 
+.nl-alt-formats__note {
+  margin: 10px 24px 0 42px;
+  color: rgba(137, 194, 217, 0.62);
+  font-family: var(--body);
+  font-size: 11px;
+  line-height: 1.5;
+  text-align: left;
+}

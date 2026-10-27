@@ -1,17 +1,17 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const msgReserva = `Hola, te escribo desde la web de NumLab Academy. Quiero consultar si mi caso es viable segun agenda y modalidad de trabajo.
+  const msgReserva = `Hola! 👋 Te escribo desde la web de NumLab Academy y quería consultar por clases particulares.
 
-Materia: ____
-Tema o unidad: ____
-Fecha de parcial/final: ____
-Lenguaje/herramienta (MATLAB/Octave/C++): ____
-Tenes parciales anteriores o guia de catedra? (si/no): ____
-Modalidad preferida: virtual / presencial
-Material disponible (PDF/enunciado/codigo): ____
-Venis solo/a o con grupo?: ____
-Buscas una sesion puntual o continuidad?: ____
+Te paso algunos datos para ver si podemos trabajar mi caso:
 
-Si hay compatibilidad de agenda y formato, podemos avanzar?`;
+- **Universidad / facultad:**
+- **Carrera:**
+- **Materia:**
+- **Comisión o cátedra:** (si corresponde, especialmente en Ingeniería UNLP)
+- **Días de cursada:**
+- **Tema o unidad que necesito trabajar:**
+- **Fecha de parcial, final o entrega:** (si ya la tengo)
+
+¡Gracias!`;
 
   const msgEmail = `Hola,
 
@@ -51,6 +51,17 @@ Fecha de parcial: ____`;
   if (el("cta-wa-sticky")) el("cta-wa-sticky").href = waHref;
   if (el("cta-wa-grupo")) el("cta-wa-grupo").href = waGrupoHref;
   if (el("cta-wa-diagnostico")) el("cta-wa-diagnostico").href = waDiagnosticoHref;
+
+  document.querySelectorAll("[data-pack-wa]").forEach((packCta) => {
+    const packName = packCta.dataset.packWa;
+    const message = msgReserva.replace(
+      "Te paso algunos datos para ver si podemos trabajar mi caso:",
+      `Quería consultar específicamente por el ${packName}.
+
+Te paso algunos datos para ver si podemos trabajar mi caso:`
+    );
+    packCta.href = window.waLink(message);
+  });
 
   if (el("cta-email")) el("cta-email").href = emailHref;
 
